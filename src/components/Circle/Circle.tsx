@@ -3,7 +3,7 @@ import { forwardRef, ForwardedRef } from 'react';
 
 type CircleProps = object
 
-const Circle = (props: CircleProps, ref: ForwardedRef<HTMLDivElement>) => {
+const Circle = (_props: CircleProps, ref: ForwardedRef<HTMLDivElement>) => {
   return (
     <div className="circle" ref={ref}>
       <div className="inner-circle"></div>
