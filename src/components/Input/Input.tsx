@@ -4,8 +4,8 @@ import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
 interface InputProps {
   setInputPosition: (position: { x: number; y: number }) => void;
-  inputValue: string | number;
-  setInputValue: Dispatch<SetStateAction<number | string>>;
+  inputValue: number;
+  setInputValue: Dispatch<SetStateAction<number>>;
 }
 
 const Input: React.FC<InputProps> = ({ setInputPosition, inputValue, setInputValue }) => {
@@ -23,7 +23,7 @@ const Input: React.FC<InputProps> = ({ setInputPosition, inputValue, setInputVal
       <input
         className="inner-input-main"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
+        onChange={(e) => setInputValue(Number(e.target.value))}
       />
       <Circle ref={ref} />
     </div>
