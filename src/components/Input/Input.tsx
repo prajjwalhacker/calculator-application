@@ -1,11 +1,11 @@
 import './input.css';
 import Circle from '../Circle/Circle';
-import { useEffect, useRef } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
 interface InputProps {
   setInputPosition: (position: { x: number; y: number }) => void;
-  inputValue: string;
-  setInputValue: (value: string) => void;
+  inputValue: string | number;
+  setInputValue: Dispatch<SetStateAction<number | string>>;
 }
 
 const Input: React.FC<InputProps> = ({ setInputPosition, inputValue, setInputValue }) => {

@@ -9,7 +9,7 @@ interface OutputProps {
 
 const Output: React.FC<OutputProps> = ({ setOutputPosition, outputValue }) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [output, setOutput] = useState<string>('');
+  const [output, setOutput] = useState<string | number>('');
 
   useEffect(() => {
     if (ref.current) {
