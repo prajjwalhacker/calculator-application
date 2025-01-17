@@ -1,16 +1,14 @@
 import './circle.css';
+import { forwardRef, ForwardedRef } from 'react';
 
-import { forwardRef } from 'react';
+type CircleProps = object
 
-const Circle = ({}, ref) => {
-
-
+const Circle = (props: CircleProps, ref: ForwardedRef<HTMLDivElement>) => {
   return (
-    <div className='circle' ref={ref}>
-    <div className='inner-circle'>
-    </div> 
-  </div> 
-  )
-}
+    <div className="circle" ref={ref}>
+      <div className="inner-circle"></div>
+    </div>
+  );
+};
 
-export default forwardRef(Circle);
+export default forwardRef<HTMLDivElement, CircleProps>(Circle);

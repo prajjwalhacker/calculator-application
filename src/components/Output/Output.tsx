@@ -2,27 +2,32 @@ import './output.css';
 import Circle from '../Circle/Circle';
 import { useEffect, useRef, useState } from 'react';
 
-const Output = ({ setOutputPosition,  outputValue }) => {
-  const ref = useRef<any>({});
-  const [output, setOutput] = useState('');
+interface OutputProps {
+  setOutputPosition: (position: { x: number; y: number }) => void;
+  outputValue: string | number;
+}
+
+const Output: React.FC<OutputProps> = ({ setOutputPosition, outputValue }) => {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [output, setOutput] = useState<string>('');
 
   useEffect(() => {
-     if (ref.current) {
+    if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
-      setOutputPosition({ x: rect.x, y: rect.y }); 
-     }
-  },[]);
+      setOutputPosition({ x: rect.x, y: rect.y });
+    }
+  }, [setOutputPosition]);
 
   useEffect(() => {
-     setOutput(outputValue)
-  },[outputValue])
+    setOutput(outputValue);
+  }, [outputValue]);
 
   return (
-    <div className='output-container'>
-      <Circle ref={ref}/>  
-      <input className='inner-output-main' value={output || ''}/>
+    <div className="output-container">
+      <Circle ref={ref} />
+      <input className="inner-output-main" value={output || ''} readOnly />
     </div>
-  )
-}
+  );
+};
 
 export default Output;
