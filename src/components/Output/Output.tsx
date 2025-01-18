@@ -11,11 +11,15 @@ const Output: React.FC<OutputProps> = ({ setOutputPosition, outputValue }) => {
   const ref = useRef<HTMLDivElement | null>(null);
   const [output, setOutput] = useState<string | number>('');
 
-  useEffect(() => {
+  const updatePositions = () => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       setOutputPosition({ x: rect.x, y: rect.y });
     }
+  }
+
+  useEffect(() => {
+    updatePositions();
   }, [setOutputPosition]);
 
   useEffect(() => {

@@ -11,12 +11,23 @@ interface InputProps {
 const Input: React.FC<InputProps> = ({ setInputPosition, inputValue, setInputValue }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+  const updatePositions = () => {
     if (ref.current) {
       const rect = ref.current.getBoundingClientRect();
       setInputPosition({ x: rect.x, y: rect.y });
     }
+  }
+
+  useEffect(() => {
+     updatePositions();
   }, [setInputPosition]);
+
+  useEffect(() => {
+    window.addEventListener("resize", updatePositions);
+    return () => {
+      window.removeEventListener("resize", updatePositions);
+    };
+  }, []);
 
   return (
     <div className="input-container">
