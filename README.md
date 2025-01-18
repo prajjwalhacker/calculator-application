@@ -40,22 +40,26 @@ This project showcases:
 src/
 ├── components/
 │   ├── Circle/
-│   │   ├── Circle.tsx      # Component for rendering a circle
-│   │   └── Circle.css      # Styles for the circle component
+│   │   ├── Circle.tsx         # Component for rendering a circle
+│   │   └── Circle.css         # Styles for the circle component
 │   ├── Function/
-│   │   ├── Function.tsx    # Component for defining a single function
-│   │   └── Function.css    # Styles for the function component
+│   │   ├── Function.tsx       # Component defining a single function
+│   │   └── Function.css       # Styles for the function component
 │   ├── DynamicCurve/
-│   │   ├── DynamicCurve.tsx # Component for rendering dynamic curves
-│   │   └── DynamicCurve.css # Styles for the dynamic curve component
+│   │   ├── DynamicCurve.tsx   # Component for rendering dynamic curves
+│   │   └── DynamicCurve.css   # Styles for the dynamic curve component
 │   ├── Input/
-│   │   ├── Input.tsx       # Component for user input
-│   │   └── Input.css       # Styles for the input component
+│   │   ├── Input.tsx          # Component for user input
+│   │   └── Input.css          # Styles for the input component
 │   └── Output/
-│       ├── Output.tsx      # Component for displaying the output
-│       └── Output.css      # Styles for the output component
-├── App.tsx                 # Main application logic
-├── index.tsx               # Application entry point
+│       ├── Output.tsx         # Component for displaying the output
+│       └── Output.css         # Styles for the output component
+├── constants/
+│   └── equationRegex.tsx      # Regular expressions for validating equations
+├── utility/
+│   └── data.tsx               # Shared utility data or functions
+├── App.tsx                    # Main application logic
+├── index.tsx                  # Application entry point
 └── styles/
-    └── global.css          # Global styles (if any)
+    └── global.css             # Global styles (if applicable)
 
