@@ -44,7 +44,7 @@ const App: React.FC = () => {
     },
     {
       id: uuidv4(),
-      equation: '2*x',
+      equation: '2*x+4',
       output: null,
       input: null,
       inputPosition: { x: 0, y: 0 },
@@ -56,7 +56,7 @@ const App: React.FC = () => {
     },
     {
       id: uuidv4(),
-      equation: 'x/2',
+      equation: 'x^2+20',
       output: null,
       input: null,
       inputPosition: { x: 0, y: 0 },
@@ -68,7 +68,7 @@ const App: React.FC = () => {
     },
     {
       id: uuidv4(),
-      equation: '4*x',
+      equation: 'x-2',
       output: null,
       input: null,
       inputPosition: { x: 0, y: 0 },
@@ -80,7 +80,7 @@ const App: React.FC = () => {
     },
     {
       id: uuidv4(),
-      equation: 'x^3',
+      equation: 'x/2',
       output: null,
       input: null,
       inputPosition: { x: 0, y: 0 },
