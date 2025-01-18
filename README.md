@@ -105,13 +105,10 @@ yarn install
 
 Using npm:
 ```bash
-npm start
+npm run dev
 ```
 
-Or using yarn:
-```bash
-yarn start
-```
+
 
 This will start the application and open it in your default web browser. If it doesn't, navigate to [http://localhost:3000](http://localhost:3000) manually.
 
