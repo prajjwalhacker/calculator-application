@@ -6,6 +6,9 @@
     width: 15.5%;
     margin-bottom: 107px;
     height: 251px;
+    @media (max-width: 768px) {
+       width: 100%;
+     }
 }
 
 .function-container .function-header {

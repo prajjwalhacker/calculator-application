@@ -11,6 +11,10 @@
     padding: 14px 20px;
     background-color: #ffffff;
     width: 115px;
+    @media (max-width: 768px) {
+        top: 0px;
+        left: 40px;
+     }
 }
 
 .input-container .inner-input-main {

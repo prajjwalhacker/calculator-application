@@ -10,6 +10,10 @@
     padding: 14px 20px;
     background-color: #ffffff;
     width: 115px;
+    @media (max-width: 768px) {
+        bottom: 0px;
+        left: 40px;
+     }
 }
 
 .output-container .inner-output-main {
