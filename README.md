@@ -1,50 +1,61 @@
-# React + TypeScript + Vite
+# Calculator App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Description
 
-Currently, two official plugins are available:
+The **Calculator App** is a React.js-based application designed to perform sequential mathematical computations. Users input a number, and the application processes this value through a series of functions. Each function is defined by a mathematical equation containing only the allowed operators:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Addition (`+`)
+- Subtraction (`-`)
+- Multiplication (`*`)
+- Division (`/`)
 
-## Expanding the ESLint configuration
+### Key Features:
+1. **Dynamic Calculation Chain**: Each function in the chain uses the result of the previous function as its input.
+2. **Output Display**: The result from the final function in the sequence is displayed in an output container.
+3. **Validation**: Only supported operators (`+`, `-`, `*`, `/`) are allowed in equations, ensuring error-free calculations.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project showcases:
+- Modular and reusable components.
+- Real-time calculation updates.
+- Validation for equation integrity.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Technologies Used
+- **React.js**: For building the user interface.
+- **CSS**: For styling the application.
+- **JavaScript**: For equation parsing and calculations.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## How to Use
+1. Input a number in the provided input field.
+2. The app processes the number through the defined series of functions.
+3. View the result in the output container.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## Folder Structure
+```plaintext
+src/
+├── components/
+│   ├── Circle/
+│   │   ├── Circle.tsx      # Component for rendering a circle
+│   │   └── Circle.css      # Styles for the circle component
+│   ├── Function/
+│   │   ├── Function.tsx    # Component for defining a single function
+│   │   └── Function.css    # Styles for the function component
+│   ├── DynamicCurve/
+│   │   ├── DynamicCurve.tsx # Component for rendering dynamic curves
+│   │   └── DynamicCurve.css # Styles for the dynamic curve component
+│   ├── Input/
+│   │   ├── Input.tsx       # Component for user input
+│   │   └── Input.css       # Styles for the input component
+│   └── Output/
+│       ├── Output.tsx      # Component for displaying the output
+│       └── Output.css      # Styles for the output component
+├── App.tsx                 # Main application logic
+├── index.tsx               # Application entry point
+└── styles/
+    └── global.css          # Global styles (if any)
+
