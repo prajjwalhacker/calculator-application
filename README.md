@@ -129,45 +129,7 @@ Or using yarn:
 yarn build
 ```
 
-The production-ready files will be in the `build/` directory.
+The production-ready files will be in the `dist/` directory.
 
-### 6. Run Tests (Optional)
-
-If the project contains tests, you can run them using:
-
-Using npm:
-```bash
-npm test
-```
-
-Or using yarn:
-```bash
-yarn test
-```
-
-## Project Structure
-
-- `src/`: Contains the source code of the application
-  - `components/`: Reusable React components
-  - `App.js`: Main application component
-  - `index.js`: Entry point for the React application
-- `public/`: Static assets and the `index.html` file
-
-## Troubleshooting
-
-- Ensure all dependencies are installed correctly.
-- Check that the correct Node.js version is installed.
-- If you encounter issues, try deleting `node_modules/` and reinstalling dependencies:
-  ```bash
-  rm -rf node_modules
-  npm install
-  ```
-
-## License
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to contribute by opening issues or submitting pull requests!
 
 
