@@ -22,6 +22,7 @@ const Output: React.FC<OutputProps> = ({ setOutputPosition, outputValue }) => {
     updatePositions();
   }, [setOutputPosition]);
 
+
   useEffect(() => {
     setOutput(outputValue);
   }, [outputValue]);

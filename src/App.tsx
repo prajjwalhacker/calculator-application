@@ -4,7 +4,8 @@ import DynamicContainerCurve from './components/DyamicCurve/DyamicCurve';
 import Function from './components/Function/Function';
 import Input from './components/Input/Input';
 import Output from './components/Output/Output';
-import { v4 as uuidv4 } from 'uuid';
+import { validateEquation } from './utility/equationRegex';
+import { functionsData } from './constants/data';
 
 
 interface Coordinate {
@@ -29,74 +30,9 @@ const App: React.FC = () => {
   const [inputPosition, setInputPosition] = useState<Coordinate>({ x: 0, y: 0 });
   const [outputPosition, setOutputPosition] = useState<Coordinate>({ x: 0, y: 0 });
   const [inputValue, setInputValue] = useState<number>(2);
-  const [functionArr, setFunctionArr] = useState<FunctionObj[]>([
-    {
-      id: uuidv4(),
-      equation: 'x^2',
-      output: null,
-      input: null,
-      inputPosition: { x: 0, y: 0 },
-      outputPosition: { x: 0, y: 0 },
-      isError: false,
-      nextFunctionIndex: 2,
-      isFinal: false,
-      isStart: true,
-    },
-    {
-      id: uuidv4(),
-      equation: '2*x+4',
-      output: null,
-      input: null,
-      inputPosition: { x: 0, y: 0 },
-      outputPosition: { x: 0, y: 0 },
-      isError: false,
-      nextFunctionIndex: 4,
-      isFinal: false,
-      isStart: false,
-    },
-    {
-      id: uuidv4(),
-      equation: 'x^2+20',
-      output: null,
-      input: null,
-      inputPosition: { x: 0, y: 0 },
-      outputPosition: { x: 0, y: 0 },
-      isError: false,
-      nextFunctionIndex: -1,
-      isFinal: true,
-      isStart: false,
-    },
-    {
-      id: uuidv4(),
-      equation: 'x-2',
-      output: null,
-      input: null,
-      inputPosition: { x: 0, y: 0 },
-      outputPosition: { x: 0, y: 0 },
-      isError: false,
-      nextFunctionIndex: 5,
-      isFinal: false,
-      isStart: false,
-    },
-    {
-      id: uuidv4(),
-      equation: 'x/2',
-      output: null,
-      input: null,
-      inputPosition: { x: 0, y: 0 },
-      outputPosition: { x: 0, y: 0 },
-      isError: false,
-      nextFunctionIndex: 3,
-      isFinal: false,
-      isStart: false,
-    },
-  ]);
+  const [functionArr, setFunctionArr] = useState<FunctionObj[]>(functionsData);
 
-  const validOperatorsRegex = /^[0-9x\s+\-*/^()]*$/;
 
-  const validateEquation = (equation: string): boolean => {
-    return validOperatorsRegex.test(equation);
-  };
 
   const computeEquation = (equation: string, value: number): number | null => {
     try {
