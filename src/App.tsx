@@ -61,6 +61,7 @@ const App: React.FC = () => {
          if (newArr[index].nextFunctionIndex === -1) break;
          index = newArr[index].nextFunctionIndex-1;
     }
+
     setFunctionArr(newArr);
 }
 
