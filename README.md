@@ -63,3 +63,111 @@ src/
 └── styles/
     └── global.css             # Global styles (if applicable)
 
+
+# Calculator Application
+
+This project is a React-based calculator application built to demonstrate the usage of React for implementing functional components and managing state. Below are the guidelines to set up and run the project on your local machine.
+
+## Prerequisites
+
+Ensure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (v14 or later is recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) for package management
+
+## Steps to Run the Project
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/prajjwalhacker/calculator-application.git
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd calculator-application
+```
+
+### 3. Install Dependencies
+
+Using npm:
+```bash
+npm install
+```
+
+Or using yarn:
+```bash
+yarn install
+```
+
+### 4. Start the Development Server
+
+Using npm:
+```bash
+npm start
+```
+
+Or using yarn:
+```bash
+yarn start
+```
+
+This will start the application and open it in your default web browser. If it doesn't, navigate to [http://localhost:3000](http://localhost:3000) manually.
+
+### 5. Build for Production
+
+To create an optimized production build, run:
+
+Using npm:
+```bash
+npm run build
+```
+
+Or using yarn:
+```bash
+yarn build
+```
+
+The production-ready files will be in the `build/` directory.
+
+### 6. Run Tests (Optional)
+
+If the project contains tests, you can run them using:
+
+Using npm:
+```bash
+npm test
+```
+
+Or using yarn:
+```bash
+yarn test
+```
+
+## Project Structure
+
+- `src/`: Contains the source code of the application
+  - `components/`: Reusable React components
+  - `App.js`: Main application component
+  - `index.js`: Entry point for the React application
+- `public/`: Static assets and the `index.html` file
+
+## Troubleshooting
+
+- Ensure all dependencies are installed correctly.
+- Check that the correct Node.js version is installed.
+- If you encounter issues, try deleting `node_modules/` and reinstalling dependencies:
+  ```bash
+  rm -rf node_modules
+  npm install
+  ```
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Feel free to contribute by opening issues or submitting pull requests!
+
+
