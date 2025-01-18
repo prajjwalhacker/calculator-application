@@ -118,7 +118,7 @@ const Function: React.FC<FunctionProps> = ({ functionObj, setFunctionArr }) => {
             options={functionsOptions}
             className="next-function-select"
             components={{ IndicatorSeparator: () => null }}
-            value={{ label: `Function ${functionObj.nextFunctionIndex}`, value: functionObj.nextFunctionIndex }}
+            value={functionObj.nextFunctionIndex !== -1 ? { label: `Function ${functionObj.nextFunctionIndex}`, value: functionObj.nextFunctionIndex }: null}
             isDisabled={true}
           />
         </div>
