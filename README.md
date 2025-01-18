@@ -59,10 +59,7 @@ src/
 ├── utility/
 │   └── data.tsx               # Shared utility data or functions
 ├── App.tsx                    # Main application logic
-├── index.tsx                  # Application entry point
-└── styles/
-    └── global.css             # Global styles (if applicable)
-
+├── main.tsx                  # Application entry point
 
 # Calculator Application
 
