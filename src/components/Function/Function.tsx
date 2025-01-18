@@ -4,6 +4,7 @@ import dragAndDrop from '../../../src/assets/images/drag-and-drop.svg';
 import Circle from '../Circle/Circle';
 import { useEffect, useRef } from 'react';
 import Select from 'react-select';
+import { functionsOptions } from '../../constants/data';
 
 interface Coordinate {
   x: number;
@@ -42,13 +43,7 @@ const Function: React.FC<FunctionProps> = ({ functionObj, setFunctionArr }) => {
     });
   };
 
-  const options = [
-    { value: 1, label: 'Function 1' },
-    { value: 2, label: 'Function 2' },
-    { value: 3, label: 'Function 3' },
-    { value: 4, label: 'Function 4' },
-    { value: 5, label: 'Function 5' },
-  ];
+
 
   const updatePositions = () => {
     if (inputCircleRef.current) {
@@ -120,7 +115,7 @@ const Function: React.FC<FunctionProps> = ({ functionObj, setFunctionArr }) => {
             Next function
           </label>
           <Select
-            options={options}
+            options={functionsOptions}
             className="next-function-select"
             components={{ IndicatorSeparator: () => null }}
             value={{ label: `Function ${functionObj.nextFunctionIndex}`, value: functionObj.nextFunctionIndex }}

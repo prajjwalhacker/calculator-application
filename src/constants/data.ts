@@ -62,3 +62,12 @@ export const functionsData = [
     isStart: false,
   },
 ];
+
+
+export const functionsOptions = [
+  { value: 1, label: 'Function 1' },
+  { value: 2, label: 'Function 2' },
+  { value: 3, label: 'Function 3' },
+  { value: 4, label: 'Function 4' },
+  { value: 5, label: 'Function 5' },
+];

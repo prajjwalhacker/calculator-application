@@ -48,19 +48,24 @@ const App: React.FC = () => {
     const newArr = JSON.parse(JSON.stringify(functionArr));
     let index = 0;
     let prevOutput;
+    let errorPresent = false;
     while(true) {
          newArr[index].input = index === 0 ? inputValue : prevOutput;
          if (!validateEquation(newArr[index].equation)) {
           newArr[index].isError= true;
+          errorPresent = true;
          }
          else {
           newArr[index].isError= false;
          }
-         newArr[index].output =  newArr[index].isError ? null : computeEquation(newArr[index].equation, newArr[index].input);
+         newArr[index].output =  errorPresent ? null : computeEquation(newArr[index].equation, newArr[index].input);
          prevOutput = newArr[index].output;
          if (newArr[index].nextFunctionIndex === -1) break;
          index = newArr[index].nextFunctionIndex-1;
     }
+
+    console.log("ewArr");
+    console.log(newArr);
 
     setFunctionArr(newArr);
 }
