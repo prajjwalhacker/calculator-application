@@ -50,7 +50,7 @@ const Function: React.FC<FunctionProps> = ({ functionObj, setFunctionArr }) => {
     { value: 5, label: 'Function 5' },
   ];
 
-  useEffect(() => {
+  const updatePositions = () => {
     if (inputCircleRef.current) {
       const rect = inputCircleRef.current.getBoundingClientRect();
       setFunctionArr((prev: any) => {
@@ -74,7 +74,21 @@ const Function: React.FC<FunctionProps> = ({ functionObj, setFunctionArr }) => {
         return newFunctionArr;
       });
     }
+  }
+
+  useEffect(() => {
+     updatePositions();
   }, [functionObj.id, setFunctionArr]);
+
+
+
+
+  useEffect(() => {
+    window.addEventListener("resize", updatePositions);
+    return () => {
+      window.removeEventListener("resize", updatePositions);
+    };
+  }, []);
 
   return (
     <div className="function-container">

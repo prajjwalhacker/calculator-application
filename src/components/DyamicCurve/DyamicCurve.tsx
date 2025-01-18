@@ -56,6 +56,8 @@ const DynamicContainerCurve: React.FC<DynamicContainerCurveProps> = ({ endCoordi
     setStart(startCoordinate);
   }, [JSON.stringify(endCoordinate), JSON.stringify(startCoordinate)]);
 
+  
+
   return (
     <div>
       <div
